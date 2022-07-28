@@ -37,8 +37,12 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: "Get file from previous job"
-          command: cat ~/output.txt
+          name: "Fail On Purpose"
+          command: exit 1
+      - run:
+          name: "Run when failed"
+          command: echo "This is a simulated rollback"
+          when: on_fail
   commands_test:
     docker:
       - image: cimg/base:stable

@@ -8,8 +8,8 @@ commands:
       to:
         default: $CIRCLE_WORKFLOW_ID
         type: string
-      steps:
-        - run: echo "The pipeline id is <<parameters.to>>"
+    steps:
+      - run: echo "The pipeline id is <<parameters.to>>"
 orbs:
   # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.4.1

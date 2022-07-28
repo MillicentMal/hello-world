@@ -20,7 +20,9 @@ jobs:
           command: echo "text to output here" > output.txt!"
       -  persist_to_workspace: 
            root: /tmp/workspace
-           paths: output.txt
+           paths: 
+            - output.txt
+            - build/*
 
   print-output:
     docker:
@@ -28,7 +30,6 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      
       - run:
           name: "Get file from previous job"
           command: "cat output.txt"

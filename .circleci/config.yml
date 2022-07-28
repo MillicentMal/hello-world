@@ -39,7 +39,7 @@ jobs:
       - run:
           name: "Get file from previous job"
           command: cat ~/output.txt
-  commants_test:
+  commands_test:
     docker:
       - image: cimg/base:stable
     steps:
